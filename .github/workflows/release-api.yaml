@@ -31,7 +31,7 @@ jobs:
             package.json
 
       - name: Check if any files were changed
-        if: steps.changed-files.outputs.any_changed == 'true' || steps.changed-files.outputs.any_modified == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true'
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
