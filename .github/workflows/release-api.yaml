@@ -31,7 +31,7 @@ jobs:
             package.json
 
       - name: Check if any files were changed
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true' || steps.changed-files.outputs.any_modified == 'true'
         run: |
           for file in ${ALL_CHANGED_FILES}; do
             echo "$file was changed"
